@@ -11,7 +11,8 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/login", {
+      // await axios.post("http://localhost:5000/login", {
+      await axios.post("https://footcourse-backend-production.up.railway.app/login", {
         email: email,
         password: password,
       });

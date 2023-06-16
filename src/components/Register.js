@@ -14,7 +14,8 @@ const Register = () => {
   const Register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/users", {
+      //await axios.post("http://localhost:5000/users", {
+      await axios.post("https://footcourse-backend-production.up.railway.app/users", {
         name: name,
         email: email,
         password: password,

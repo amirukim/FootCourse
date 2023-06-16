@@ -13,7 +13,7 @@ function Navbar2() {
 
   const Logout = async () => {
     try {
-      await axios.delete("http://localhost:5000/logout");
+      await axios.delete("https://footcourse-backend-production.up.railway.app/logout");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -26,7 +26,7 @@ function Navbar2() {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("https://footcourse-backend-production.up.railway.app/token");
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setName(decoded.name);
@@ -45,7 +45,7 @@ function Navbar2() {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const respone = await axios.get("http://localhost:5000/token");
+        const respone = await axios.get("https://footcourse-backend-production.up.railway.app/token");
         config.headers.Authorization = `Bearer ${respone.data.accessToken}`;
         setToken(respone.data.accessToken);
         const decoded = jwt_decode(respone.data.accessToken);
