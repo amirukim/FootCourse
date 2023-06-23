@@ -29,8 +29,14 @@ function Boots(props) {
     //getBootById();
   }, []);
 
-  const getBoots = async () => {
+  /*const getBoots = async () => {
     const response = await axios.get("http://localhost:5000/boot").then((response) => {
+      setBoots(response.data);
+    });
+  };*/
+
+  const getBoots = async () => {
+    const response = await axios.get("https://footcourse-backend-production.up.railway.app/boot").then((response) => {
       setBoots(response.data);
     });
   };
@@ -42,9 +48,9 @@ function Boots(props) {
 
   return (
     <>
-      <section className='container py-10 mx-auto flex flex-col'>
-        <h1 className='text-xl text-hijau sm:text-4xl md:text-5xl font-monsterrat font-bold '>Boot</h1>
-        <div>
+      <section className='container py-10 mx-auto flex flex-col lg:px-14'>
+        <h1 className='text-xl text-hijau sm:text-3xl md:text-4xl font-monsterrat font-bold lg:px-14'>Boot</h1>
+        <div className='lg:px-14'>
           <h2 className=' text-base text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>Determine Your Foot</h2>
           <div className='p-2 rounded-2xl bg-dark-purple'>
             <p className='text-base font-semibold text-white/80 text-justify sm:text-lg m-2 p-5'>
@@ -54,9 +60,9 @@ function Boots(props) {
             </p>
           </div>
         </div>
-        <div>
+        <div className='lg:px-14'>
           <h2 className=' text-base text-white sm:text-2xl font-monsterrat font-bold pt-8 md:pt-10 pb-4 '>Boot Comparision</h2>
-          <div className='md:relative md:mx-auto'>
+          <div className='md:relative md:mx-auto lg:px-14s'>
             <div className='p-4 grid grid-cols-1 sm:grid-cols-2 gap-6 md:h-auto md:max-w-7xl md:mx-auto md:place-content-evenly'>
               <div className='flex flex-col bg-dark-purple p-4 rounded-2xl'>
                 <select

@@ -30,7 +30,7 @@ const Profile = () => {
   }, []);
 
   const getUserByName = async () => {
-    const response = await axios.get(`http://localhost:5000/users/${name}`);
+    const response = await axios.get(`https://footcourse-backend-production.up.railway.app/${name}`);
     setEmail(response.data.email);
     setName(response.data.name);
     setPhoneNo(response.data.phoneNo);
@@ -111,9 +111,9 @@ const Profile = () => {
   ];
 
   return (
-    <div className='container w-auto m-auto p-2 '>
-      <h1 className='text-2xl m-2 p-1 md:p-5 text-hijau sm:text-4xl md:text-5xl font-monsterrat font-bold '>Player Information</h1>
-      <div className='flex justify-center'>
+    <div className='container w-auto m-auto p-2 lg:px-14'>
+      <h1 className='text-2xl m-2 p-1 md:p-5 text-hijau sm:text-3xl md:text-4xl font-monsterrat font-bold lg:px-14 '>Player Information</h1>
+      <div className='flex justify-center lg:px-14'>
         <div className='w-11/12 md:w-3/4 bg-white/90 rounded-2xl flex flex-col'>
           <div className='m-8 shadow-md rounded-lg bg-dark-purple p-2 md:p-10 lg:px-20 lg:py-10'>
             <div className='flex flex-col-reverse md:flex-row  justify-between items-center'>

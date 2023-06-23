@@ -96,7 +96,7 @@ const Homepage = () => {
 
   return (
     <section className='container py-10 mx-auto flex flex-col'>
-      <div className='flex justify-around px-2 pb-5 '>
+      <div className='flex justify-around px-2 md:px-5 py-5 md:py-20 '>
         <div>
           <h1 className='text-5xl md:text-7xl font-bold font-monsterrat text-hijau mt-10 mb-9'>Welcome {name} !</h1>
           <h2 className='text-3xl md:text-5xl font-semibold font-monsterrat text-white mt-4 mb-4'>Its Time to be a Pro</h2>
@@ -108,7 +108,7 @@ const Homepage = () => {
           <img src='./images/shilloutes1.png' alt='' />
         </div>
       </div>
-      <div className='container p-2 md:p-5  m-auto rounded-2xl bg-dark-purple grid grid-cols-3  md:grid-cols-4'>
+      <div className='container p-2 md:p-5  m-auto rounded-2xl bg-dark-purple grid grid-cols-3 lg:w-3/4  md:grid-cols-4'>
         <div className='hidden md:block p-4'>
           <img src='./images/silhouette2.svg' alt='' />
         </div>
@@ -146,7 +146,7 @@ const Homepage = () => {
       </div>
 
       <div className='container p-1  md:p-5 my-5'>
-        <div className='container p-2 md:p-5  m-auto  rounded-2xl bg-dark-purple grid grid-cols-1  md:grid-cols-2'>
+        <div className='container p-2 md:p-5 lg:w-3/4 m-auto  rounded-2xl bg-dark-purple grid grid-cols-1  md:grid-cols-2'>
           <div className='flex flex-col justify-center items-center p-1 md:p-2'>
             <h4 className='font-monsterrat font-bold text-base md:text-3xl text-white'>In Collaboration with:</h4>
             <div className='flex flex-col justify-center items-center md:p-4'>

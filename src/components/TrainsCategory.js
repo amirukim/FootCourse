@@ -33,7 +33,7 @@ const TrainCategory = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const respone = await axios.get("http://localhost:5000/token");
+        const respone = await axios.get("https://footcourse-backend-production.up.railway.app/token");
         config.headers.Authorization = `Bearer ${respone.data.accessToken}`;
         setToken(respone.data.accessToken);
         const decoded = jwt_decode(respone.data.accessToken);
@@ -57,11 +57,11 @@ const TrainCategory = () => {
   };*/
 
   return (
-    <section className='container px-4 py-10 mx-auto flex flex-col'>
-      <h1 className='text-xl text-hijau sm:text-4xl md:text-5xl font-monsterrat font-bold '>Technique Training</h1>
+    <section className='container px-4 py-14 lg:px-14 mx-auto flex flex-col'>
+      <h1 className='text-xl lg:px-14 text-hijau sm:text-3xl md:text-4xl font-monsterrat font-bold '>Technique Training</h1>
       <div>
-        <h2 className='text-lg text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>I want to improve my...</h2>
-        <div class='container  py-4 '>
+        <h2 className='text-lg lg:px-14 text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>I want to improve my...</h2>
+        <div class='container lg:px-14  py-4 '>
           <div class='flex flex-wrap '>
             <div class='flex flex-wrap  w-1/2'>
               <div class='w-1/2 p-1 h-40 md:p-2'>

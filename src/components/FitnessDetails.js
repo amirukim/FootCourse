@@ -26,7 +26,7 @@ const FitnessDetails = () => {
   }, []);
 
   const getSelectedModule = async () => {
-    const response = await axios.get(`http://localhost:5000/train/fitness/${courseName}`);
+    const response = await axios.get(`https://footcourse-backend-production.up.railway.app/train/fitness/${courseName}`);
     //setSelectedModule(response.data);
     setModuleName(response.data.courseName);
     setModuleLevel(response.data.level);
@@ -39,13 +39,13 @@ const FitnessDetails = () => {
   };
 
   const getVideoByModul = async () => {
-    const response = await axios.get(`http://localhost:5000/train/fitness/${courseName}/video`);
+    const response = await axios.get(`https://footcourse-backend-production.up.railway.app/train/fitness/${courseName}/video`);
     setModule(response.data);
   };
 
   return (
-    <section className='container py-10 mx-auto flex flex-col'>
-      <div className='pl-4 pt-6 flex flex-row gap-1 items-center'>
+    <section className='container py-10 lg:px-14 mx-auto flex flex-col'>
+      <div className='pl-4 md:pt-6 flex flex-row gap-1 items-center lg:px-14'>
         <a href='/trains/fitness' className='text-base text-white sm:text-lg font-monsterrat font-bold  hover:text-hijau'>
           Trains
         </a>{" "}
@@ -57,42 +57,48 @@ const FitnessDetails = () => {
         <h3 className='text-base text-oren sm:text-lg font-monsterrat font-bold inline'>{moduleName}</h3>
       </div>
 
-      <div className='flex justify-center'>
+      <div className='flex justify-center lg:px-14'>
         <div className='p-4 flex justify-center w-full'>
-          <div className='flex flex-col xl:flex-row shadow bg-dark-purple w-full rounded-2xl overflow-hidden cursor-pointer'>
-            <img class='object-cover w-auto h-48 md:h-full md:w-1/3 pr-8' src={`/images/Trains/Fitness/${moduleImage}`} />
-            <div className='relative p-4 sm:flex sm:flex-col sm:justify-between'>
-              <h4 className='text-4xl py-2 font-bebas text-white'>{moduleName}</h4>
-              <h4 className='text-l py-2 font-monsterrat text-white'>
-                <Icon className='inline mx-1' icon='carbon:skill-level-advanced' />
-                {moduleLevel}
-              </h4>
-              <h4 className='text-l py-2 font-monsterrat text-white'>Equipment:</h4>
-              <div className='grid grid-cols-1 sm:grid-cols-2 sm:gap-2 '>
-                <div className='flex flex-col justify-center items-center  bg-white/20 py-1 px-4 rounded-2xl'>
-                  <Icon className='inline mx-1 text-white text-xl md:text-4xl' icon={`${iconEquipment1}`} />
-                  <h4 className=' mx-1 text-base  font-monsterrat text-white'>{equipment1}</h4>
-                </div>
-                <div className='flex flex-col justify-center items-center  bg-white/20 py-1 px-4 rounded-lg'>
-                  <Icon className='inline mx-1 text-white text-xl md:text-4xl' icon={`${iconEquipment2}`} />
-                  <h4 className=' mx-1 text-base font-monsterrat text-white'>{equipment2}</h4>
-                </div>
+          <div className='flex flex-col md:flex-row  shadow bg-dark-purple w-full rounded-2xl overflow-hidden cursor-pointer'>
+            <img class='object-cover w-full h-48 md:h-full md:w-1/3 pr-8' src={`/images/Trains/Fitness/${moduleImage}`} />
+            <div className='flex p-4 justify-between sm:flex-col'>
+              <div>
+                <h4 className='text-lg md:text-4xl py-2 font-bebas text-white'>{moduleName}</h4>
+                <h4 className='text-sm py-2 font-monsterrat text-white'>
+                  <Icon className='inline mx-1' icon='carbon:skill-level-advanced' />
+                  {moduleLevel}
+                </h4>
               </div>
 
-              <h4 className=' inline text-2xl py-4 font-bebas text-white'>
-                <Icon className='inline mx-1 text-white' icon='ic:round-access-time' />
-                {moduleDuration} min
-              </h4>
+              <div>
+                <h4 className='text-sm py-2 font-monsterrat text-white'>Equipment:</h4>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 '>
+                  <div className='flex flex-col justify-center items-center  bg-white/20 py-1 px-4 rounded-lg'>
+                    <Icon className='inline mx-1 text-white text-base md:text-3xl' icon={`${iconEquipment1}`} />
+                    <h4 className='hidden md:block mx-1 text-sm  font-bebas text-white'>{equipment1}</h4>
+                  </div>
+                  <div className='flex flex-col justify-center items-center  bg-white/20 py-1 px-4 rounded-lg'>
+                    <Icon className='inline mx-1 text-white text-base md:text-3xl' icon={`${iconEquipment2}`} />
+                    <h4 className='hidden md:block mx-1 text-sm font-bebas text-white'>{equipment2}</h4>
+                  </div>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <h4 className=' inline text-2xl py-4 font-bebas text-white'>
+                  <Icon className='inline mx-1 text-white' icon='ic:round-access-time' />
+                  {moduleDuration} min
+                </h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <h2 className='pl-4 pt-6 text-base text-white sm:text-3xl font-monsterrat font-bold '>Exercises</h2>
+      <div className='lg:px-14'>
+        <h2 className='pl-4 pt-6 text-base text-white sm:text-2xl font-monsterrat font-bold '>Exercises</h2>
         <div className='flex justify-center'>
           <div className='p-4 grid grid-cols-1 gap-4 w-3/4'>
-            <div className='flex flex-col xl:flex-row shadow  w-full bg-dark-purple rounded-2xl overflow-hidden cursor-pointer'>
+            <div className='flex flex-col lg:flex-row shadow  w-full bg-dark-purple rounded-2xl overflow-hidden cursor-pointer'>
               <video className='hidden md:block' width='60%' height='70%' controls>
                                 
                 <source src={`/videos/warmup.mp4`} type='video/mp4' />
@@ -144,7 +150,7 @@ const FitnessDetails = () => {
                 </div>
               </div>
             ))}
-            <div className='flex flex-col xl:flex-row shadow  w-full bg-dark-purple rounded-2xl overflow-hidden cursor-pointer'>
+            <div className='flex flex-col lg:flex-row shadow  w-full bg-dark-purple rounded-2xl overflow-hidden cursor-pointer'>
               <video className='hidden md:block' width='60%' height='70%' controls>
                                 
                 <source src={`/videos/cooldown.mp4`} type='video/mp4' />

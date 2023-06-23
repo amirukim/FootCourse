@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TestDetails = () => {
   const [name, setName] = useState("");
@@ -24,7 +26,6 @@ const TestDetails = () => {
   const [Passing, setTestPassing] = useState("");
   const [Header, setTestHeader] = useState("");
   const [Crossing, setTestCrossing] = useState("");
-  const [showModal, setShowModal] = React.useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -81,9 +82,12 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Dribbling,
       });
+
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Dribbling);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -93,9 +97,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Finishing,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Finishing);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -105,10 +111,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Agility,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Agility);
-      setShowModal(true);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -118,10 +125,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Strength,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Strength);
-      setShowModal(true);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -131,10 +139,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Speed,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Speed);
-      setShowModal(true);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
   const saveTestControl = async (e) => {
@@ -143,9 +152,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Control,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Control);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -155,9 +166,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Passing,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Passing);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -167,9 +180,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Header,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Header);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -179,9 +194,11 @@ const TestDetails = () => {
       await axios.patch(`http://localhost:5000/users/${name}`, {
         Crossing,
       });
+      toast.success("Submission Completed, Go to profile for analysis.");
       console.log(Crossing);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong.");
     }
   };
 
@@ -199,9 +216,9 @@ const TestDetails = () => {
   };
 
   return (
-    <section className='container py-10 mx-auto flex flex-col'>
-      <h1 className='text-2xl m-2 text-hijau sm:text-4xl md:text-5xl font-monsterrat font-bold '>Test Your Limit</h1>
-      <h2 className='pt-4 m-2 text-lg text-white sm:text-2xl md:pt-8  font-monsterrat font-bold '>{TestName}</h2>
+    <section className='container py-10 lg:px-14 mx-auto flex flex-col'>
+      <h1 className='text-2xl m-2 text-hijau sm:text-3xl md:text-4xl font-monsterrat font-bold lg:px-14'>Test Your Limit</h1>
+      <h2 className='pt-2 m-2 text-lg text-white sm:text-2xl md:pt-4  font-monsterrat font-bold lg:px-14'>{TestName}</h2>
       <div className='flex flex-col items-center'>
         <div className='p-4 flex flex-col items-center w-full'>
           <img class='object-cover w-auto md:h-full md:w-3/4 pr-8' src={`/images/Tests/${ImageTest}`} />
@@ -209,7 +226,7 @@ const TestDetails = () => {
             <p className='font-bebas m-2 p-5 text-white/80 text-justify sm:text-2xl md:mx-8 md:p-5 font-light'>{Details}</p>
           </div>
         </div>
-        <div className='flex flex-col p-2 m-2 md:m-8 md:flex-row md:justify-evenly xl:flex-row shadow  w-full bg-hover-purple rounded-2xl overflow-hidden md:w-3/4'>
+        <div className='flex flex-col p-2 m-2 md:m-8 md:flex-row md:justify-evenly xl:flex-row shadow  w-full bg-hover-purple rounded-2xl overflow-hidden md:w-3/4 lg:px-14'>
           <div className='flex flex-col items-center md:p-4 md:m-2'>
             <img className='hidden md:block md:w-2/3' src='/images/shilloutes1.png' />
           </div>
@@ -420,42 +437,7 @@ const TestDetails = () => {
           </div>
         </div>
       </div>
-      {showModal ? (
-        <>
-          <div className='justify-center items-center flex fixed inset-0 z-50 outline-none focus:outline-none'>
-            <div className='relative w-auto my-6 mx-auto max-w-full'>
-              {/*content*/}
-              <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
-                {/*header*/}
-                <div className='flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t'>
-                  <h3 className='text-3xl font-monsterrat font-semibold'>Submitted</h3>
-                  <button
-                    className='p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none'
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className='bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none'>×</span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className='flex justify-center p-6 h-full w-full'>
-                  <p className='text-lg md:2xl font-monsterrat font-semibold'>Your test value has been sumbitted. You can view at profile for analysis.</p>
-                </div>
-                {/*footer*/}
-                <div className='flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b'>
-                  <button
-                    className='text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-                    type='button'
-                    onClick={() => setShowModal(false)}
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='opacity-25 fixed inset-0 z-40 bg-black'></div>
-        </>
-      ) : null}
+      <ToastContainer />
     </section>
   );
 };

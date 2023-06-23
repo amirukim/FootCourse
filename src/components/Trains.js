@@ -15,7 +15,7 @@ const Trains = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("https://footcourse-backend-production.up.railway.app/token");
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setName(decoded.name);
@@ -33,7 +33,7 @@ const Trains = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const respone = await axios.get("http://localhost:5000/token");
+        const respone = await axios.get("https://footcourse-backend-production.up.railway.app/token");
         config.headers.Authorization = `Bearer ${respone.data.accessToken}`;
         setToken(respone.data.accessToken);
         const decoded = jwt_decode(respone.data.accessToken);
@@ -57,11 +57,11 @@ const Trains = () => {
   };*/
 
   return (
-    <section className='container p-4 py-10 mx-auto flex flex-col'>
-      <h1 className='text-xl text-hijau sm:text-4xl  md:text-5xl Fitness font-monsterrat font-bold '>Training Session</h1>
+    <section className='container p-4 py-16 lg:px-14 mx-auto flex flex-col'>
+      <h1 className='text-xl lg:px-14 text-hijau sm:text-3xl  md:text-4xl Fitness font-monsterrat font-bold '>Training Session</h1>
       <div>
-        <h2 className='text-lg text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>Explore</h2>
-        <div className='flex flex-col gap-8'>
+        <h2 className='text-lg lg:px-14 text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>Explore</h2>
+        <div className='flex flex-col gap-8 lg:px-14'>
           <div className='container h-40  bg-dark-purple rounded-lg  hover:bg-hover-purple '>
             <a href='/trains/techniqueCategory' className=' h-full w-full flex items-center'>
               <h2 className='text-lg sm:text-3xl font-bebas text-white p-2 sm:px-8'>Develop your Technique</h2>

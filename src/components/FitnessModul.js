@@ -13,13 +13,13 @@ const FitnessModul = () => {
   }, []);
 
   const getModulByAspect = async () => {
-    const response = await axios.get(`http://localhost:5000/train/fitness`);
+    const response = await axios.get(`https://footcourse-backend-production.up.railway.app/train/fitness`);
     setModul(response.data);
   };
 
   return (
-    <section className='container py-10 mx-auto flex flex-col'>
-      <div className='pl-4 pt-6 flex flex-row gap-1 items-center'>
+    <section className='container py-10  lg:px-14 mx-auto flex flex-col'>
+      <div className='pl-4 pt-6 flex flex-row gap-1 items-center lg:px-14'>
         <a href='/trains' className='text-base text-white sm:text-lg font-monsterrat font-bold  hover:text-hijau'>
           Trains
         </a>
@@ -28,7 +28,7 @@ const FitnessModul = () => {
           Fitness
         </a>
       </div>
-      <div className='mx-1 px-2'>
+      <div className='mx-1 px-2 lg:px-14'>
         <h2 className='pt-4  text-base text-white sm:text-2xl  font-monsterrat font-bold '>Fitness Module</h2>
         <div className='py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full'>
           {fitnessModul.map((Fitness, index) => (

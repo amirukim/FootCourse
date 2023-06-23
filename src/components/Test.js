@@ -15,20 +15,20 @@ const Tests = () => {
   }, []);
 
   const getFitnessTest = async () => {
-    const response = await axios.get("http://localhost:5000/test/fitness");
+    const response = await axios.get("https://footcourse-backend-production.up.railway.app/test/fitness");
     setFitnessTest(response.data);
   };
   const getTechniqueTest = async () => {
-    const response = await axios.get("http://localhost:5000/test/technique");
+    const response = await axios.get("https://footcourse-backend-production.up.railway.app/test/technique");
     setTechniqueTest(response.data);
   };
 
   return (
-    <section className='container  py-10 mx-auto flex flex-col'>
-      <h1 className='text-xl text-hijau sm:text-4xl  md:text-5xl Fitness font-monsterrat font-bold '>Test</h1>
+    <section className='container lg:px-14  py-10 mx-auto flex flex-col'>
+      <h1 className='text-xl lg:px-14 text-hijau sm:text-3xl  md:text-4xl Fitness font-monsterrat font-bold '>Test</h1>
       <div>
-        <h2 className='text-base text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>Fitness Test</h2>
-        <div className='py-4 grid grid-cols-1 gap-2 m-5 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:w-full'>
+        <h2 className='text-base lg:px-14 text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4 '>Fitness Test</h2>
+        <div className='py-4 lg:px-14 grid grid-cols-1 gap-2  md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:w-full'>
           {fitnessTest.map((FitnessTest, index) => (
             <a href={`/tests/fitness/${FitnessTest.testName}`} className='flex flex-col xl:flex-row'>
               <div className='flex items-center flex-col p-5 xl:flex-row shadow hover:bg-white/20 w-full bg-hover-purple rounded-lg overflow-hidden cursor-pointer' key={index.id}>
@@ -39,8 +39,8 @@ const Tests = () => {
         </div>
       </div>
       <div>
-        <h2 className='text-base text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4  '>Technique Test</h2>
-        <div className='py-4 grid grid-cols-1 gap-2 m-5 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:w-full'>
+        <h2 className='text-base lg:px-14 text-white sm:text-2xl font-monsterrat font-bold pt-8 pb-4  '>Technique Test</h2>
+        <div className='py-4 lg:px-14 grid grid-cols-1 gap-2  md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:w-full'>
           {techniqueTest.map((TechniqueTest, index) => (
             <a href={`/tests/technique/${TechniqueTest.testName}`} className='flex flex-col xl:flex-row'>
               <div className='flex flex-col xl:flex-row shadow hover:bg-white/20 w-full bg-hover-purple rounded-lg overflow-hidden cursor-pointer' key={index.id}>

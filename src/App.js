@@ -16,6 +16,7 @@ import Tests from "./components/Test";
 import TestDetails from "./components/TestDetails";
 import Profile from "./components/Profile";
 import Navbar2 from "./components/Navbar2";
+import "./App.css";
 
 function App() {
   return (

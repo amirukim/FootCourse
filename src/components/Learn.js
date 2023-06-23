@@ -25,22 +25,22 @@ function Learns() {
   }, []);
 
   const getTactic = async () => {
-    const response = await axios.get("http://localhost:5000/learn");
+    const response = await axios.get("https://footcourse-backend-production.up.railway.app/learn");
     setLearns(response.data);
   };
 
   return (
-    <section className='container py-10 mx-auto flex flex-col'>
-      <h1 className='text-2xl px-1 text-hijau sm:text-4xl md:text-5xl font-monsterrat font-bold '>Tactics & Mentality</h1>
+    <section className='container px-4 py-4 md:py-10  lg:px-14 mx-auto flex flex-col'>
+      <h1 className='text-xl px-1 lg:px-14 text-hijau sm:text-3xl md:text-4xl font-monsterrat font-bold '>Tactics & Mentality</h1>
       <div>
-        <h2 className='pt-8 px-1 text-lg text-white sm:text-2xl font-monsterrat font-bold '>Mentality</h2>
+        <h2 className='pt-8 px-1 lg:px-14 text-lg text-white sm:text-2xl font-monsterrat font-bold '>Mentality</h2>
 
-        <div className='flex flex-wrap justify-center items-center gap-4 py-4 p-2  lg:gap-6'>
+        <div className='flex flex-wrap justify-center items-center gap-4 py-4 p-2  m-2  lg:gap-6'>
           <div className='bg-white/20 md:p-4 rounded-lg'>
             <div className='hidden md:block'>
               <iframe
-                width='458'
-                height='315'
+                width='380'
+                height='215'
                 src='https://www.youtube.com/embed/UjF2X1tNweg'
                 title='YouTube video player'
                 frameborder='0'
@@ -60,14 +60,14 @@ function Learns() {
               ></iframe>
             </div>
             <div>
-              <h4 className='text-base md:text-2xl p-4 font-bebas text-white'>5 mental hacks to beat nervousness in football</h4>
+              <h4 className='text-base md:text-lg p-4 font-bebas text-white'>5 mental hacks to beat nervousness in football</h4>
             </div>
           </div>
           <div className='bg-white/20 md:p-4 rounded-lg'>
             <div className='hidden md:block'>
               <iframe
-                width='458'
-                height='315'
+                width='380'
+                height='215'
                 src='https://www.youtube.com/embed/9_8SwnueNCw'
                 title='YouTube video player'
                 frameborder='0'
@@ -87,14 +87,14 @@ function Learns() {
               ></iframe>
             </div>
             <div>
-              <h4 className='text-base md:text-2xl p-4 font-bebas text-white'>Watch this if you feel like giving up on football</h4>
+              <h4 className='text-base md:text-lg p-4 font-bebas text-white'>Watch this if you feel like giving up on football</h4>
             </div>
           </div>
           <div className='bg-white/20 md:p-4 rounded-lg'>
             <div className='hidden md:block'>
               <iframe
-                width='458'
-                height='315'
+                width='380'
+                height='215'
                 src='https://www.youtube.com/embed/IkB8nCGVy8g'
                 title='YouTube video player'
                 frameborder='0'
@@ -115,14 +115,14 @@ function Learns() {
             </div>
 
             <div>
-              <h4 className='text-base md:text-2xl p-4 font-bebas text-white'>ONE important lesson football has taught me</h4>
+              <h4 className='text-base md:text-lg p-4 font-bebas text-white'>ONE important lesson football has taught me</h4>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <h2 className='pt-8 px-1 text-lg text-white sm:text-2xl font-monsterrat font-bold '>Tactical</h2>
-        <div className='p-1 py-4 m-2  flex flex-col justify-center items-center gap-2  md:grid md:grid-cols-2  md:gap-6 md:w-full xl:grid-cols-3'>
+        <h2 className='pt-8 px-1 lg:px-14 text-lg text-white sm:text-2xl font-monsterrat font-bold '>Tactical</h2>
+        <div className='p-1 py-4 lg:px-14 m-2  flex flex-col justify-center items-center gap-2  md:grid md:grid-cols-2  md:gap-6 md:w-full xl:grid-cols-3'>
           {currentItems.map((learn, index) => (
             <div className='w-full'>
               <button
@@ -135,12 +135,12 @@ function Learns() {
                   setVideoName(learn.videoname);
                 }}
               >
-                <img class='object-cover w-40 h-36 sm:w-100 md:h-48  xl:w-52' src={`../images/Learns/${learn.image}`} alt={learn.videoname} />
+                <img class='object-cover w-40 h-36 md:h-44  ' src={`../images/Learns/${learn.image}`} alt={learn.videoname} />
                 <div className='flex p-4 flex-col justify-between'>
-                  <h4 className='text-base md:text-2xl  py-2 font-bebas text-white md:text-left'>{learn.videoname}</h4>
+                  <h4 className='text-base md:text-lg  py-2 font-bebas text-white md:text-left'>{learn.videoname}</h4>
 
                   <div className='hidden sm:block w-fit p-2 rounded-lg bg-dark-purple'>
-                    <p className='sm:text-lg font-bebas text-white'>{learn.videoDuration} Min</p>
+                    <p className='sm:text-base font-bebas text-white'>{learn.videoDuration} Min</p>
                   </div>
                 </div>
               </button>

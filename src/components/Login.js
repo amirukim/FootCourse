@@ -11,7 +11,7 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-      // await axios.post("http://localhost:5000/login", {
+      //await axios.post("http://localhost:5000/login", {
       await axios.post("https://footcourse-backend-production.up.railway.app/login", {
         email: email,
         password: password,
@@ -25,9 +25,9 @@ const Login = () => {
   };
   return (
     <section className='h-screen flex bg-light-purple sm:bg-white'>
-      <div className='container sm:m-auto sm:max-w-5xl  bg-light-purple rounded-lg   sm:shadow-default p-3 sm:py-10 sm:px-16 '>
-        <h1 className='text-4xl md:text-5xl font-extrabold font-monsterrat text-hijau mt-4 mb-12'>Login to FootCourse!</h1>
-        <h3 className='text-2xl md:text-3xl font-bebas text-hijau mt-4 '>
+      <div className='container sm:m-auto sm:max-w-3xl  bg-light-purple rounded-2xl   sm:shadow-default p-3 sm:py-10 sm:px-16 '>
+        <h1 className='text-4xl md:text-5xl font-extrabold font-monsterrat text-hijau mt-4 mb-6'>Login to FootCourse!</h1>
+        <h3 className='text-2xl md:text-3xl font-bebas text-hijau mt-2 '>
           DONT GIVEUP, STAY WAKE UP<h3 className='text-2xl font-bebas text-white mb-12 '> BE PROFESSIONAL!</h3>
         </h3>
         <div className=' grid grid-cols-1 sm:grid-cols-2'>
