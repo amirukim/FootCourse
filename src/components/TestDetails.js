@@ -62,7 +62,7 @@ const TestDetails = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const respone = await axios.get("http://localhost:5000/token");
+        const respone = await axios.get("https://footcourse-backend-production.up.railway.app/token");
         config.headers.Authorization = `Bearer ${respone.data.accessToken}`;
         setToken(respone.data.accessToken);
         const decoded = jwt_decode(respone.data.accessToken);
@@ -79,7 +79,7 @@ const TestDetails = () => {
   const saveTestDribbling = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Dribbling,
       });
 
@@ -94,7 +94,7 @@ const TestDetails = () => {
   const saveTestFinishing = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Finishing,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -108,7 +108,7 @@ const TestDetails = () => {
   const saveTestAgility = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Agility,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -122,7 +122,7 @@ const TestDetails = () => {
   const saveTestStrength = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Strength,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -136,7 +136,7 @@ const TestDetails = () => {
   const saveTestSpeed = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Speed,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -149,7 +149,7 @@ const TestDetails = () => {
   const saveTestControl = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Control,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -163,7 +163,7 @@ const TestDetails = () => {
   const saveTestPassing = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Passing,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -177,7 +177,7 @@ const TestDetails = () => {
   const saveTestHeader = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Header,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -191,7 +191,7 @@ const TestDetails = () => {
   const saveTestCrossing = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${name}`, {
+      await axios.patch(`https://footcourse-backend-production.up.railway.app/users/${name}`, {
         Crossing,
       });
       toast.success("Submission Completed, Go to profile for analysis.");
@@ -203,7 +203,7 @@ const TestDetails = () => {
   };
 
   const getUserByName = async () => {
-    const response = await axios.get(`http://localhost:5000/users/${name}`);
+    const response = await axios.get(`https://footcourse-backend-production.up.railway.app/users/${name}`);
     setTestDribbling(response.data.Dribbling);
     setTestAgility(response.data.Agility);
     setTestSpeed(response.data.Speed);
